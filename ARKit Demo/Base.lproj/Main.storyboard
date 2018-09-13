@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARKit_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cHu-gP-lr4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" wantsMultisampling="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mtg-hU-A7N">
+                                <rect key="frame" x="0.0" y="-20" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BV1-FR-VrT" id="zn2-03-Zam"/>
+                                </connections>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfE-jD-0tH">
+                                <rect key="frame" x="82" y="45" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.95814680627162996" green="0.9882352941176471" blue="0.950539772894062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Images">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="imageRecognitionActivated:" destination="BV1-FR-VrT" eventType="primaryActionTriggered" id="zKM-uS-EZw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-RZ-k0f">
+                                <rect key="frame" x="17" y="45" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.95814680627162996" green="0.9882352941176471" blue="0.950539772894062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Planes">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="planeDetectionActivated:" destination="BV1-FR-VrT" eventType="primaryActionTriggered" id="POV-7j-dUS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ff-7I-c0D">
+                                <rect key="frame" x="155" y="50" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Mtg-hU-A7N" secondAttribute="bottom" id="Abs-Zi-MzD"/>
+                            <constraint firstItem="Mtg-hU-A7N" firstAttribute="leading" secondItem="9zd-pH-HcW" secondAttribute="leading" id="HbP-z6-otM"/>
+                            <constraint firstItem="Mtg-hU-A7N" firstAttribute="trailing" secondItem="9zd-pH-HcW" secondAttribute="trailing" id="UaL-fQ-w77"/>
+                            <constraint firstItem="Mtg-hU-A7N" firstAttribute="top" secondItem="cHu-gP-lr4" secondAttribute="top" id="mVf-uB-rYe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9zd-pH-HcW"/>
+                    </view>
+                    <connections>
+                        <outlet property="modeLabel" destination="3Ff-7I-c0D" id="njv-vY-YTx"/>
+                        <outlet property="sceneView" destination="Mtg-hU-A7N" id="BYe-Qj-OWB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+        </scene>
+    </scenes>
+</document>
